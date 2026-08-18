@@ -38,9 +38,11 @@ export function extractSignals(sourceText: string): ExtractedSignal[] {
     return [];
   }
 
-  const deadline = findDeadline(source);
+  const sourceLines = source.split(/\r?\n/u);
 
   return ACTION_RULES.filter((rule) => rule.pattern.test(source)).map((rule) => {
+    const evidenceLine = sourceLines.find((line) => rule.pattern.test(line)) ?? source;
+    const deadline = findDeadline(evidenceLine);
     const signal: ExtractedSignal = {
       kind: rule.kind,
       label: rule.label,

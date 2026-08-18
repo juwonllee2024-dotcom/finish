@@ -32,4 +32,17 @@ describe("extractSignals", () => {
       label: "Prepare the receipt"
     });
   });
+
+  it("keeps separate deadlines attached to their source lines", () => {
+    const source = [
+      "Electric bill: pay $83.20 by 2026-08-28",
+      "Online order: return the item by 2026-08-30"
+    ].join("\n");
+
+    const signals = extractSignals(source);
+
+    expect(signals).toHaveLength(2);
+    expect(signals[0]).toMatchObject({ kind: "pay", deadline: { raw: "2026-08-28" } });
+    expect(signals[1]).toMatchObject({ kind: "return", deadline: { raw: "2026-08-30" } });
+  });
 });
