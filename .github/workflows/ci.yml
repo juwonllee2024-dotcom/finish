@@ -48,7 +48,7 @@ jobs:
         run: |
           mkdir -p .smoke
           cd .smoke
-          npm init -y >/dev/null 2>&1
-          npm install ../.artifacts/finish-0.1.0.tgz >/dev/null 2>&1
-          npx --no-install finish demo --output demo.html
+          npm init -y
+          npm install ../.artifacts/finish-0.1.0.tgz
+          node node_modules/finish/dist/cli.js demo --output demo.html
           test -s demo.html
