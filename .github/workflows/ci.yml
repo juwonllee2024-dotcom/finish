@@ -46,8 +46,8 @@ jobs:
       - name: Clean package smoke test
         shell: bash
         run: |
-          mkdir -p .smoke
-          cd .smoke
+          mkdir -p smoke
+          cd smoke
           npm init -y
           npm install ../.artifacts/finish-0.1.0.tgz
           node node_modules/finish/dist/cli.js demo --output demo.html
