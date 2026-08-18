@@ -3,6 +3,22 @@
   "version": "0.1.0",
   "description": "Turn everyday input into a safe path toward completion.",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juwonllee2024-dotcom/finish.git"
+  },
+  "bugs": {
+    "url": "https://github.com/juwonllee2024-dotcom/finish/issues"
+  },
+  "homepage": "https://github.com/juwonllee2024-dotcom/finish#readme",
+  "keywords": [
+    "productivity",
+    "local-first",
+    "open-source",
+    "cli",
+    "workflow",
+    "deadlines"
+  ],
   "type": "module",
   "engines": {
     "node": ">=20"
@@ -25,8 +41,12 @@
     "README.md",
     "LICENSE",
     "SECURITY.md",
-    "CHANGELOG.md"
+    "CHANGELOG.md",
+    "examples"
   ],
+  "overrides": {
+    "esbuild": "0.28.2"
+  },
   "scripts": {
     "build": "tsup",
     "typecheck": "tsc --noEmit",

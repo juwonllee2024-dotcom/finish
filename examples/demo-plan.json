@@ -1,0 +1,28 @@
+{
+  "schemaVersion": "0.1",
+  "title": "Electric bill",
+  "sourceText": "Electric bill: pay $83.20 by 2026-08-28\nOnline order: return the item by 2026-08-30",
+  "items": [
+    {
+      "id": "item-1",
+      "label": "Pay the bill",
+      "kind": "pay",
+      "stage": "approval_required",
+      "approvalRequired": true,
+      "suggestedNextStep": "Verify the amount and recipient before paying.",
+      "deadline": { "raw": "2026-08-28", "isoDate": "2026-08-28" },
+      "evidence": "Electric bill: pay $83.20 by 2026-08-28\nOnline order: return the item by 2026-08-30"
+    },
+    {
+      "id": "item-2",
+      "label": "Return the item",
+      "kind": "return",
+      "stage": "prepare",
+      "approvalRequired": false,
+      "suggestedNextStep": "Check the return window and gather the receipt.",
+      "deadline": { "raw": "2026-08-30", "isoDate": "2026-08-30" },
+      "evidence": "Electric bill: pay $83.20 by 2026-08-28\nOnline order: return the item by 2026-08-30"
+    }
+  ],
+  "summary": { "total": 2, "approvalRequired": 1, "deadlines": 2 }
+}
